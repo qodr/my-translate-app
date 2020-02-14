@@ -8,12 +8,19 @@ import { DateAdapter } from '@angular/material';
 })
 export class AppComponent {
   title = 'my-translate-app';
+  locales = [
+    { name: 'English', value: 'en' },
+    { name: 'Dutch', value: 'nl' },
+    { name: 'Turkish', value: 'tr' }
+  ];
+  locale = 'en';
 
   constructor(private dateAdapter: DateAdapter<AppComponent>) {
-
+    this.setLocale(this.locale);
   }
 
   setLocale(locale: string) {
-    this.dateAdapter.setLocale(locale);
+    this.locale = locale;
+    this.dateAdapter.setLocale(this.locale);
   }
 }

@@ -1,5 +1,10 @@
-<p>
-  <button (click)="setLocale('nl-NL')">NL</button>
-  <button (click)="setLocale('en-GB')">EN</button>
-</p>
+<mat-form-field>
+  <mat-label>Locale: </mat-label>
+  <mat-select [value]="locale" (valueChange)="setLocale($event)">
+    <mat-option *ngFor="let l of locales" [value]="l.value">
+      {{l.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
 <router-outlet></router-outlet>
