@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DateAdapter } from '@angular/material';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -15,12 +16,13 @@ export class AppComponent {
   ];
   locale = 'en';
 
-  constructor(private dateAdapter: DateAdapter<AppComponent>) {
+  constructor(private dateAdapter: DateAdapter<AppComponent>, private translateService: TranslateService) {
     this.setLocale(this.locale);
   }
 
   setLocale(locale: string) {
     this.locale = locale;
     this.dateAdapter.setLocale(this.locale);
+    this.translateService.use(this.locale);
   }
 }

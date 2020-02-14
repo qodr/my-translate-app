@@ -8,6 +8,14 @@ import { MatFormFieldModule, MatNativeDateModule, MatDatepickerModule, MatInputM
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +31,15 @@ import { FormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      },
+      defaultLanguage: 'en'
+    }),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
