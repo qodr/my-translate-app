@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatNativeDateModule, MatDatepickerModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { MatFormFieldModule, MatNativeDateModule, MatDatepickerModule, MatInputModule, MatSelectModule, MatButtonModule, MatRadioModule } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 
@@ -23,6 +23,8 @@ import { FormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatButtonModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
