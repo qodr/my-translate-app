@@ -1,3 +1,5 @@
 {
-  "GREETING": "Merhaba {{ name }}"
+  "GREETING": "Merhaba {name}",
+  "CLICKS": "{count, plural, =0{hiç tiklanmadi} =1{bir kere tiklandi} =2{iki kere tiklandi} other{birkaç defa ({count}) tiklandi}}",
+  "GENDER": "{gender, select, male{O} female{O} other{Onlar}} calisiyor"
 }
