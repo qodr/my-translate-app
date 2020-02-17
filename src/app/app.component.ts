@@ -13,14 +13,15 @@ export class AppComponent {
     { name: 'Dutch', value: 'nl' },
     { name: 'Turkish', value: 'tr' }
   ];
-  locale = 'en';
+  locale: string;
 
   constructor(private dateAdapter: DateAdapter<AppComponent>) {
-    this.setLocale(this.locale);
+    const path = window.location.pathname.split('/').filter(x => x && x.length > 0);
+    this.locale = path[0] || 'tr';
+    this.dateAdapter.setLocale(this.locale);
   }
 
   setLocale(locale: string) {
-    this.locale = locale;
-    this.dateAdapter.setLocale(this.locale);
+    window.location.href = window.location.pathname.replace(this.locale, locale);
   }
 }

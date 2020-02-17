@@ -34,6 +34,33 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "aot": true,
+              "outputPath": "dist/en/",
+              "i18nFile": "src/i18n/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error",
+              "baseHref": "/en/"
+            },
+            "nl": {
+              "aot": true,
+              "outputPath": "dist/nl/",
+              "i18nFile": "src/i18n/messages.nl.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "nl",
+              "i18nMissingTranslation": "error",
+              "baseHref": "/nl/"
+            },
+            "tr": {
+              "aot": true,
+              "outputPath": "dist/tr/",
+              "i18nFile": "src/i18n/messages.tr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "tr",
+              "i18nMissingTranslation": "error",
+              "baseHref": "/tr/"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -70,7 +97,18 @@
           "options": {
             "browserTarget": "my-translate-app:build"
           },
+          "i18nLocale": "tr",
+          "i18nFile": "src/i18n/messages.tr.xlf",
           "configurations": {
+            "en": {
+              "browserTarget": "my-translate-app:build:en"
+            },
+            "nl": {
+              "browserTarget": "my-translate-app:build:nl"
+            },
+            "tr": {
+              "browserTarget": "my-translate-app:build:tr"
+            },
             "production": {
               "browserTarget": "my-translate-app:build:production"
             }
